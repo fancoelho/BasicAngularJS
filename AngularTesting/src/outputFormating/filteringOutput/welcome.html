@@ -1,0 +1,33 @@
+<html ng-app="myApp">
+<head>
+<title>Angular Output filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<link rel="stylesheet" href = "main.css">
+<script type="text/javascript" src="app.js"></script>
+</head>
+
+<body >
+	<div ng-controller="MainController as main">
+	
+	<p>Seleciona o grupo:</p>
+	<p>
+		<select ng-model="main.selectedType">
+			<option value="">Todos</option>
+			<option value="fruta">Fruta</option>
+			<option value="carne">Carne</option>
+			<option value="legume">Legume</option>
+		</select>
+	</p>
+	
+	<hr/>
+	
+	<ul>
+		<li ng-repeat="item in main.items | filter:main.selectedType">
+			{{item.name}} ({{item.type}})
+		</li>
+	</ul>
+	
+	</div> 
+</body>
+
+</html>

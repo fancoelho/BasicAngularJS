@@ -42,5 +42,11 @@ div.ng-scope{
 	color:#ff0000;
 }
 
+input.ng-pristine{
+	background: #ddffdd;
+}
 
+input.ng-dirty{
+	background: #ffdddd;
+}
 
