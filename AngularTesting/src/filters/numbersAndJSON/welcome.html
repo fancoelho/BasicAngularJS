@@ -1,0 +1,42 @@
+<html ng-app="myApp">
+
+<head>
+<title>Angular Filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" scr="app.js"></script>
+<link rel="stylesheet" href = "main.css">
+</head>
+
+<body>
+
+	<div ng-controller="MainController as main">
+<!-- 		<p>ex: de Filtro de numeros </p> -->
+		<!-- 		formata o numero com 3 casas decimais -->
+			{{195005.5448 | number:2}}
+			
+			{{main.user | json}}
+	</div>
+
+</body>
+
+</html>
+
+<script>
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController', [function(){
+	
+	this.user ={
+			nome:'Filipe',
+			apelido:'Coelho',
+			conta: {
+				idConta:'12121144',
+				tipo:'ORDEM'
+			},
+			saldo:'198880.25',
+			hobbies:['futebol','pesca','cinema']
+	};
+	
+}]);
+</script>

@@ -1,0 +1,41 @@
+<html ng-app="myApp">
+
+<head>
+<title>Angular Filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" scr="app.js"></script>
+<link rel="stylesheet" href = "main.css">
+</head>
+
+<body>
+
+	<div ng-controller="MainController as main">
+	<p> Now : {{main.now | date:'medium'}}</p>
+	
+	<p> User : {{main.now | date:'medium'}}</p>
+	<p> Aniversario : {{main.user.aniversario | date:'MMMM dd, yyyy'}}</p>
+	<p> ultimo login : {{main.user.ultimoLogin | date:'shortDate'}}</p>
+	
+	</div>
+
+</body>
+
+</html>
+
+<script>
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController', [function(){
+	
+	this.now = new Date();
+	
+	this.user = {
+			nome:'Filipe',
+			aniversario:'171781200000',
+			ultimoLogin:'1437705300000'
+	
+	};
+	
+}]);
+</script>

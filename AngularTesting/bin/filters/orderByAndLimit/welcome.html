@@ -1,0 +1,61 @@
+<html ng-app="myApp">
+
+<head>
+<title>Angular Filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" scr="app.js"></script>
+<link rel="stylesheet" href = "main.css">
+</head>
+
+<body>
+
+	<div ng-controller="MainController as main">
+		
+	<ul ng-repeat="user in main.users | orderBy:'apelido' | limitTo:1:3">
+		
+		<li> Nome: {{user.nome + ' '+ user.apelido}}</li>
+		<li> TipoConta: {{user.tipoConta}}</li>
+		<li> Saldo: {{user.saldo}}</li>
+		
+	</ul>
+
+	</div>
+
+</body>
+
+</html>
+
+<script>
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController', [function(){
+	
+	this.users =[
+	{
+			nome:'Filipe',
+			apelido:'Coelho',
+			tipoConta:'ORDEM',
+			saldo:'198880.25'
+	},
+	{
+		nome:'Joao',
+		apelido:'Antunes',
+		tipoConta:'ORDEM',
+		saldo:'123'
+	},
+	{
+		nome:'Maria',
+		apelido:'Catarina',
+		tipoConta:'ORDEM',
+		saldo:'123'
+	},
+	{
+		nome:'Manuela',
+		apelido:'Gomes',
+		tipoConta:'ORDEM',
+		saldo:'123'
+	}];
+	
+}]);
+</script>

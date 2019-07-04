@@ -1,0 +1,56 @@
+<html ng-app="myApp">
+
+<head>
+<title>Angular Filters</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script type="text/javascript" scr="app.js"></script>
+<link rel="stylesheet" href = "main.css">
+</head>
+
+<body>
+
+	<div ng-controller="MainController as main">
+		
+		<p>Nome : {{main.user.nome | capitalize}}</p>
+		<p>Conta : {{main.user.tipoConta | capitalize}}</p>
+		<p>Saldo : {{main.user.saldo | currency:'USD $':2}}</p>
+
+	</div>
+
+</body>
+
+</html>
+
+<script>
+
+angular.module('myApp',[]);
+
+angular.module('myApp').controller('MainController', [function(){
+	
+	this.user =
+	{
+			nome:'filipe coelho',
+			tipoConta:'ORDEM',
+			saldo:'198880.25'
+	};
+	
+}]);
+
+angular.module('myApp').filter('capitalize',function(){
+	return function(value){
+		
+		var result = null;
+		var words = value.split(' ');
+		words.forEach(function(item){
+			
+			if(result){
+				result+=' ';
+			}else{
+				result='';
+			}
+			result+=item.substr(0,1).toUpperCase()+item.substr(1 ).toLowerCase();
+		});
+		return result;
+	}
+});
+</script>
