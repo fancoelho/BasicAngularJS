@@ -2,9 +2,9 @@
 
 angular.module('myApp',[]);
 
-angular.module('myApp').controller('MainController', [function($q,RandomNameService){
+angular.module('myApp').controller('MainController', [function(){
 
-	this.data = {name:'John',age:32};
+	this.data = [1,2,3]
 	
 	this.results = [];
 	
@@ -16,6 +16,8 @@ angular.module('myApp').controller('MainController', [function($q,RandomNameServ
 	var isElement = 'Is Object? '+angular.isElement(this.data);
 	var isDefined = 'Is Object? '+angular.isDefined(this.data);
 	var isUndefined = 'Is Object? '+angular.isUndefined(this.data);
+	
+	this.results.push(isObject,isArray,isString,isNumber,isDate,isElement,isDefined,isUndefined);
 	
 	
 	
