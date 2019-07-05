@@ -11,10 +11,10 @@
 
 	<div ng-controller="MainController as main">
 		
-		<p>Nome : {{main.user.nome | uppercase}}</p>
-		<p>Apelido : {{main.user.apelido | uppercase}}</p>
+		<p>Nome : {{main.user.nome }}</p>
+		<p>Apelido : {{main.user.apelido }}</p>
 		<p>Conta : {{main.user.tipoConta | lowercase}}</p>
-		<p>Saldo : {{main.user.saldo | currency:'USD $':0}}</p>
+		<p>Saldo : {{main.user.saldo | currency:'EUR €':0}}</p>
 
 	</div>
 
