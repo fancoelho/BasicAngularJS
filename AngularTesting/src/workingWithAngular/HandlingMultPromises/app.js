@@ -52,20 +52,7 @@ angular.module('myApp').controller('MainController', ['$q','RandomNameService',f
 	var firstNamePromise = RandomNameService.getName('first');
 	var middleNamePromise = RandomNameService.getName('middle');
 	var lastNamePromise = RandomNameService.getName('last');
-	/*
-	firstNamePromise.then(function(name){
-		vm.firstName = name;
-	});
-	
-	middleNamePromise.then(function(name){
-		vm.middleName = name;
-	});
-	
-	lastNamePromise.then(function(name){
-		vm.lastName = name;
-	});
-	*/
-	
+
 	var completed = $q.all([firstNamePromise,middleNamePromise,lastNamePromise]);
 	
 	completed.then(function(data){
